@@ -1,0 +1,3 @@
+# LJ Code 201 - Day 1
+
+So today I was able to "master" version control "acp" using git bash and github which was really cool since I could never find an easy tutorial on it. Additionally I learned how to implement some simply JS into an html boiler plate, so I'm beginning to see it's value but I really want to know more about what else it can do and how it interacts with the html. My initial panic is going down but still I can't get too complacent resting on what I've learned over the years. Really, the hardest part for me now is memorizing all the commands in the proper order and executing them quickly. I'm pretty glad I was programming already and was teaching myself things like algorithms and data structures, now to get my speed going...Cheers for now.
