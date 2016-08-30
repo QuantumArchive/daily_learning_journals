@@ -4,6 +4,7 @@ Today, we got to mess around with event listeners on lists this was pretty cool 
 
 Basically, we want to make sure that we don't produce repeating images on the list that we present to the user for selecting an image. Additionally, we want to make sure we don't show any of those three images in the next round of selections after they pick an image. One way to do this is generate an array of size 3 that contains non-repeating image paths. This would require you to make a while loop that builds this array by using indexOf to check if any new images you may consider inputting to this array to see if it already exists there. You would then use this array and loop through the paths to produce your table.
 
+```javascript
 function buildArray(oldArray) {
   var k = 0;
   var random = generateRandom();
@@ -19,13 +20,16 @@ function buildArray(oldArray) {
   }
   return newArray;
 }
+```
 
 My problem with this approach is using indexOf means you're always looping through your array and comparing each element with each selected candidate. This tends to get costly as your newArray gets large. Also, to be consistent when counting clicks, you would need to get the source image path and loop through your array of objects and match the path and increment that click variable. This again is more looping, potentially up to the size of the array.
 
 So to circumvent this, I keep an array of indexes. Basically, when I generate my array of objects from the image names, I produce an index array that goes [0,...,N]. When I generate a random number, I then check against the index array and if they match, put that value into my new array and change the value in the index array to -1. Then as you find more random values, only grab values that don't return -1:
 
+```javascript
 indexArray = [0, 1, 2, 3, 4, -1, 6, 7, 8, 9, 10];
 newArray = [5];
+```
 
 So above, we grabbed index 5 which is 5 and we can't grab this again. After we build our array of unique values, we leave the index array with the -1 values in place. So when we generate a new list, we won't pick those values. After we regenerate, we take the array with our old indexes and return them to the index array. Again, maybe my method is a little more convoluted, but it minimizes looping and comparing through arrays and accesses arrays immediate based on the index. The trick is to making sure you are consistent and that way you can always call any array and be sure you're accessing the correct object given those indexes you saved. Again, this is just a personal method I came up with to avoid looping and I know that it's still fairly modular code. Once I generate the array of objects and add however many image files, I can consistently always get unique indexes and from there, build out the image list.
 
