@@ -1,0 +1,3 @@
+#Learning Journal - Day 18
+
+Today we put the finishing touches on the CSS and refactored the code as much as possible to make it clear. We were even able to expand the card set so that a random subset is picked for every difficulty so you can't quickly get familiar with the type of cards you're playing with. We even managed the code modular enough that we could add animations to the selecting and flipping of the cards. I think I've learned to thoroughly enjoy the coding with teammates process because when we found a bug at the last minute, I just busted up laughing. Fortunately, it was a bug we saw before and I identified a fix pretty quickly. This has been a pretty awesome experience and I'm looking forward to moving to 301!
